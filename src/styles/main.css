@@ -84,59 +84,33 @@ body {
  * Jumbotron
  */
  
- .hero {
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  width: 100%;
+ .hero-container {
   min-height: 380px;
-  background: #000000;
-  background-image: url('../public/images/heros/hero-image_1.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative; 
-}
-@media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
-  .img {
-    background-image: url('../public/images/heros/hero-image_1.jpg');
-  }
-}
-
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  position: relative;
+  background-image: url('../public/images/heros/hero-image_4.jpg');
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
 }
 
-
-.hero-inner {
-  align-self: center;
-  text-align: center;
-  max-width: 50%;
+.hero-container .hero-content-container {
   position: absolute;
-  color: #ffffff;
-  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.hero-title {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 32px;
+.hero-container .hero-content-container > h1,
+p {
+  font-weight: bold;
+  line-height: 2em;
 }
-
-.hero-tag {
-  color: #ffffff;
-  font-weight: 500;
-  font-size: 18px;
+.hero-text {
+  color: white;
 }
-
 /*
   Main Content
 */

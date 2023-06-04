@@ -20,7 +20,7 @@ Scenario('liking one restaurants', async ({ I }) => {
   I.waitForElement('.resto-item', 10);
   I.seeElement('.resto-item');
 
-  const firstRestaurant = locate('.resto-item').first();
+  const firstRestaurant = locate('.resto__title a').first();
   const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
   I.wait(3);
@@ -32,7 +32,7 @@ Scenario('liking one restaurants', async ({ I }) => {
   I.amOnPage('/#/Favorite');
   I.wait(3);
   I.seeElement('.resto-item');
-  const likedRestaurantName = await I.grabTextFrom('.resto-item');
+  const likedRestaurantName = await I.grabTextFrom('.resto__title');
 
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
 });

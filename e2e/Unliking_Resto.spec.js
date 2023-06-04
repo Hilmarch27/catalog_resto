@@ -15,7 +15,7 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.waitForElement('.resto-item');
   I.seeElement('.resto-item');
 
-  const firstRestaurant = locate('.resto-item').first();
+  const firstRestaurant = locate('.resto__title a').first();
   const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
@@ -23,15 +23,15 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.seeElement('#likeButton');
   I.click('#likeButton');
 
-  I.amOnPage('/#/like');
+  I.amOnPage('/#/Favorite');
   I.wait(5);
   I.seeElement('#restos');
-  const likedRestaurantName = await I.grabTextFrom('.resto-item');
+  const likedRestaurantName = await I.grabTextFrom('.resto__title');
 
   // membandingkan apakah sama atau tidak
   assert.strictEqual(firstRestaurantName, likedRestaurantName);
 
-  I.click('.resto-item');
+  I.click('.resto__title a');
 
   I.waitForElement('#likeButton');
   I.seeElement('#likeButton');
